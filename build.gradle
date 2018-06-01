@@ -1,0 +1,14 @@
+repositories {
+    maven { url "repo" }
+}
+configurations {
+    conf
+}
+dependencies {
+    conf('org.sample:test:[1.0,)') {
+        attributes {
+            attribute(org.gradle.api.internal.project.ProjectInternal.STATUS_ATTRIBUTE, 'release')
+        }
+    }
+    conf 'org.sample:test:1.1-SNAPSHOT'
+}
